@@ -163,7 +163,7 @@ source $VIRTUALENV_LOC/bin/activate
 
 # Install dependencies with Pip.
 puts-step "Installing dependencies using pip version $(pip --version | awk '{print $2}')"
-pip install -r requirements/heroku.txt --no-index --find-links file://$BUILD_DIR/requirements/dist/| indent
+pip install -r requirements/prod.txt --no-index --find-links file://$BUILD_DIR/requirements/dist/| indent
 
 # Do additional application hackery if applications appears to be a Django app.
 # Optionally, disable all Django-specific changes with `DISABLE_INJECTION` env.

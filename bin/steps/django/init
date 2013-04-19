@@ -7,7 +7,7 @@ if [ -f .heroku/collectstatic_disabled ]; then
   DISABLE_COLLECTSTATIC=1
 fi
 
-DJANGO_SETTINGS_MODULE=portfoliyo.settings.heroku
+DJANGO_SETTINGS_MODULE=knet.settings
 
 export MANAGE_FILE DJANGO_SETTINGS_MODULE
 
