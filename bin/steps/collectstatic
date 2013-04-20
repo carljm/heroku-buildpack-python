@@ -34,7 +34,7 @@ if [ ! "$DISABLE_COLLECTSTATIC" ]; then
         echo "access_key = $AWS_ACCESS_KEY_ID" >> /tmp/s3cfg
         echo "secret_key = $AWS_SECRET_ACCESS_KEY" >> /tmp/s3cfg
 
-        python2 -S $BIN_DIR/s3cmd -c /tmp/s3cfg --no-encrypt -P --add-header="Expires:Thu, 15 Apr 2020 20:00:00 GMT" --add-header="Cache-Control:max-age=31536000, public" -M sync collected-assets/ s3://$AWS_STORAGE_BUCKET_NAME/
+        python2 -S $BIN_DIR/s3cmd -c /tmp/s3cfg --no-encrypt --no-preserve -P --add-header="Expires:Thu, 15 Apr 2020 20:00:00 GMT" --add-header="Cache-Control:max-age=31536000, public" -M sync collected-assets/ s3://$AWS_STORAGE_BUCKET_NAME/
     fi
 
     echo
