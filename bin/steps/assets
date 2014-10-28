@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source $BIN_DIR/utils
+
+bpwatch start assets
+
+if [ -x $BUILD_DIR/bin/assets ]; then
+    $BUILD_DIR/bin/assets build
+fi
+
+bpwatch stop assets
